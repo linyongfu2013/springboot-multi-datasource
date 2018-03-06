@@ -1,0 +1,119 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--&lt;!&ndash;suppress ALL &ndash;&gt;-->
+<!--<mapper namespace="com.imooc.dao.mapper.UserMapper">-->
+    <!--&lt;!&ndash;com.imooc.entity.User&ndash;&gt;-->
+    <!--<resultMap id="BaseResultMap" type="User">-->
+        <!--<id column="user_id" jdbcType="BIGINT" property="userId"/>-->
+        <!--<result column="user_name" jdbcType="VARCHAR" property="userName"/>-->
+        <!--<result column="gender" jdbcType="TINYINT" property="gender"/>-->
+        <!--<result column="phone" jdbcType="BIGINT" property="phone"/>-->
+        <!--<result column="email" jdbcType="VARCHAR" property="email"/>-->
+        <!--<result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>-->
+        <!--<result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>-->
+    <!--</resultMap>-->
+    <!--<sql id="Base_Column_List">-->
+    <!--user_id, user_name, gender, phone, email, create_time, update_time-->
+  <!--</sql>-->
+    <!--<select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">-->
+        <!--select-->
+        <!--<include refid="Base_Column_List"/>-->
+        <!--from testdb.t_user-->
+        <!--where user_id = #{userId,jdbcType=BIGINT}-->
+    <!--</select>-->
+    <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">-->
+    <!--delete from testdb.t_user-->
+    <!--where user_id = #{userId,jdbcType=BIGINT}-->
+  <!--</delete>-->
+    <!--<insert id="insert" parameterType="User">-->
+        <!--<selectKey keyProperty="userId" order="AFTER" resultType="java.lang.Long">-->
+            <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into testdb.t_user (user_name, gender, phone,-->
+        <!--email, create_time, update_time-->
+        <!--)-->
+        <!--values (#{userName,jdbcType=VARCHAR}, #{gender,jdbcType=TINYINT}, #{phone,jdbcType=BIGINT},-->
+        <!--#{email,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}-->
+        <!--)-->
+    <!--</insert>-->
+    <!--<insert id="insertSelective" parameterType="User">-->
+        <!--<selectKey keyProperty="userId" order="AFTER" resultType="java.lang.Long">-->
+            <!--SELECT LAST_INSERT_ID()-->
+        <!--</selectKey>-->
+        <!--insert into testdb.t_user-->
+        <!--<trim prefix="(" suffix=")" suffixOverrides=",">-->
+            <!--<if test="userName != null">-->
+                <!--user_name,-->
+            <!--</if>-->
+            <!--<if test="gender != null">-->
+                <!--gender,-->
+            <!--</if>-->
+            <!--<if test="phone != null">-->
+                <!--phone,-->
+            <!--</if>-->
+            <!--<if test="email != null">-->
+                <!--email,-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--create_time,-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--update_time,-->
+            <!--</if>-->
+        <!--</trim>-->
+        <!--<trim prefix="values (" suffix=")" suffixOverrides=",">-->
+            <!--<if test="userName != null">-->
+                <!--#{userName,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="gender != null">-->
+                <!--#{gender,jdbcType=TINYINT},-->
+            <!--</if>-->
+            <!--<if test="phone != null">-->
+                <!--#{phone,jdbcType=BIGINT},-->
+            <!--</if>-->
+            <!--<if test="email != null">-->
+                <!--#{email,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--#{createTime,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--#{updateTime,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+        <!--</trim>-->
+    <!--</insert>-->
+    <!--<update id="updateByPrimaryKeySelective" parameterType="User">-->
+        <!--update testdb.t_user-->
+        <!--<set>-->
+            <!--<if test="userName != null">-->
+                <!--user_name = #{userName,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="gender != null">-->
+                <!--gender = #{gender,jdbcType=TINYINT},-->
+            <!--</if>-->
+            <!--<if test="phone != null">-->
+                <!--phone = #{phone,jdbcType=BIGINT},-->
+            <!--</if>-->
+            <!--<if test="email != null">-->
+                <!--email = #{email,jdbcType=VARCHAR},-->
+            <!--</if>-->
+            <!--<if test="createTime != null">-->
+                <!--create_time = #{createTime,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+            <!--<if test="updateTime != null">-->
+                <!--update_time = #{updateTime,jdbcType=TIMESTAMP},-->
+            <!--</if>-->
+        <!--</set>-->
+        <!--where user_id = #{userId,jdbcType=BIGINT}-->
+    <!--</update>-->
+    <!--<update id="updateByPrimaryKey" parameterType="User">-->
+    <!--update testdb.t_user-->
+    <!--set user_name = #{userName,jdbcType=VARCHAR},-->
+      <!--gender = #{gender,jdbcType=TINYINT},-->
+      <!--phone = #{phone,jdbcType=BIGINT},-->
+      <!--email = #{email,jdbcType=VARCHAR},-->
+      <!--create_time = #{createTime,jdbcType=TIMESTAMP},-->
+      <!--update_time = #{updateTime,jdbcType=TIMESTAMP}-->
+    <!--where user_id = #{userId,jdbcType=BIGINT}-->
+  <!--</update>-->
+<!--</mapper>-->

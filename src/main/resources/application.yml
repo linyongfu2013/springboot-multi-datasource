@@ -1,0 +1,46 @@
+spring:
+  datasource:   #多数据源配置
+    master:
+      url: jdbc:mysql://localhost:3307/testdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    slave:
+      url: jdbc:mysql://localhost:3308/testdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+
+
+#spring:
+#  datasource:   #多数据源配置
+#    type: com.alibaba.druid.pool.DruidDataSource
+##    url: jdbc:mysql://localhost:3307/testdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+#    url: jdbc:mysql://localhost:3308/testdb?useUnicode=true&characterEncoding=utf8&useSSL=false
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.jdbc.Driver
+
+
+#  jpa:
+#    show-sql: true
+
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.imooc.entity
+#  configuration:
+#    map-underscore-to-camel-case: true
+#    cache-enabled: false
+#    default-executor-type: reuse
+#    default-statement-timeout: 600
+
+
+
+
